@@ -39,6 +39,7 @@
 | Not Null | true | true | false | true | false | true |
 | Default | N/A | N/A | N/A | 0 | N/A | N/A | user(id) |
 
+<!-- invoice attachment file link? -->
 **Note** - I may end up adding an invoice column depending on whether or not I can get the attachments to work. 
 
 ### Templates
@@ -55,5 +56,6 @@
 ### Optional: Saved Emails
 **Note** - this depends on `nodemailer`'s options for sent emails. 
 
-
+<!-- table somewhere of invoices to crud as well
+ -->
 
