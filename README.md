@@ -1,7 +1,7 @@
 # Invoicer
 ## Created by Andrea McKenzie
- - Email:[mckenzie.andrea.m@gmail.com](mailto:mckenzie.andrea.m@gmail.com)
- - LinkedIn:[Andrea McKenzie](https://www.linkedin.com/in/andrea-mckenzie/)
+ - Email: [mckenzie.andrea.m@gmail.com](mailto:mckenzie.andrea.m@gmail.com)
+ - LinkedIn: [Andrea McKenzie](https://www.linkedin.com/in/andrea-mckenzie/)
  - Skype: andrea.michelle.mckenzie
 
  Invoicer is a React/Express application that sends template emails to your saved clients. 
