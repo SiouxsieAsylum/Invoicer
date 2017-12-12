@@ -32,7 +32,7 @@
 
 ### Contacts
 | Column | name | email | company | owed | service | id | contractor-id |
-|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|
 | type | VARCHAR | VARCHAR | VARCHAR | FLOAT | VARCHAR | SERIAL | INTEGER
 | Primary key | false | false | false | false | false | true | false |
 | References | N/A | N/A | N/A | N/A | N/A | N/A | user(id) |
@@ -44,6 +44,7 @@
 ### Templates
 
 | Column | template | id | 
+|---|---|---|
 | Type | TEXT | SERIAL |
 | Primary Key | false | true | 
 | References | N/A | N/A |
