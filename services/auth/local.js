@@ -10,8 +10,8 @@ const options = {};
 init();
 
 passport.use(
-  new LocalStrategy(options, (email, password, done) => {
-    User.findByEmail(email)
+  new LocalStrategy(options, (username, password, done) => {
+    User.findByEmail(username)
     .then(user => {
       console.log(user)
       if (!user) {
