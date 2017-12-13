@@ -1,0 +1,9 @@
+{
+  "name": "Invoice",
+  "version": "1.0.0",
+  "description": "A template email sending application",
+  "main": "app.js",
+  "repository": "https://github.com/SiouxsieAsylum/Invoicer.git",
+  "author": "Andrea McKenzie <mckenzie.andrea.m@gmail.com>",
+  "license": "MIT"
+}
