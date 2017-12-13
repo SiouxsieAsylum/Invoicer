@@ -5,21 +5,21 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 require('dotenv').config();
 
-//Auth dependencies//
+
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 
 
-//---------------------Config App--------------------------------//
+
 const app = express();
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log('Server connected to PORT: ', PORT);
+  console.log(PORT + ', yall');
 });
 
-//---------------------Middleware--------------------------------//
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,9 +33,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-//---------------------Routes--------------------------------//
+
 app.get('/', (req, res) => {
-  // res.sendFile(path.join(__dirname, 'public', 'index.html'));
   res.send('Hello')
 });
 
