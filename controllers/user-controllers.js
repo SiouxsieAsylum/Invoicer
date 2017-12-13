@@ -6,7 +6,6 @@ const usersController = {};
 
 usersController.create = (req, res, next) => {
   // debugger;
-  // console.log(req)
 
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
@@ -48,7 +47,7 @@ users.Controller.update = (req,res,next) => {
     company: req.body.company,
     icon: req.body.icon,
     signature: req.body.signature
-  }).then(user => {
+  },req.user.id).then(user => {
     res.json({
       message: `${user.name} updated!`,
       data: { user }
