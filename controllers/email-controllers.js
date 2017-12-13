@@ -1,5 +1,17 @@
 const Email = require('../models/Email');
-const emailController = {};
+const nodemailer = require('nodemailer')
+const emailControllers = {};
+
+const transporter = nodemailer.createTransport({
+    // this is the host that sends the mail
+    host: 'smtp.mail.yahoo.com',
+    // this is the port it operates on
+    port: 587,
+    auth: {
+        user: 'datetimetest001@yahoo.com',
+        pass: 'farrah12'
+    }
+});
 
 emailControllers.getTemplate = (req,res,next) =>{
   Email.getTemplate(req.params.id)
@@ -21,9 +33,9 @@ emailControllers.getAllTemplates = (req,res,next) =>{
   })
   .catch(next)
 }
-emailControllers.sendEmail = (req,res,next) =>{
+emailControllers.sendEmails = (req,res,next) =>{
   let mailOptions = {
-        from: req.user.email,
+        from: req.body.email,
         to: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line
         text: req.body.text, // plain text body
@@ -39,7 +51,7 @@ emailControllers.sendEmail = (req,res,next) =>{
         res.send('sent')
 
     });
-  .catch(next)
+
 }
 
 module.exports = emailControllers;

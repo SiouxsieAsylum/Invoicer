@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
-const
+
 
 const usersController = {};
 
@@ -39,7 +39,7 @@ usersController.show = (req,res,next) => {
   .catch(next)
 }
 
-users.Controller.update = (req,res,next) => {
+usersController.update = (req,res,next) => {
   User.update({
     username: req.body.username,
     password_hash: hash,

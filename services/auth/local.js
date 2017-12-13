@@ -13,10 +13,13 @@ passport.use(
   new LocalStrategy(options, (email, password, done) => {
     User.findByEmail(email)
     .then(user => {
+      console.log(user)
       if (!user) {
+        console.log("not in database")
         return done(null, false);
       }
-      if (!authHelpers.comparePass(password, user.password_hash)) {
+      if (!authHelpers.comparePass(password, user.password_digest)) {
+        console.log("passwords don't match")
         return done(null, false);
       } else {
         return done(null, user);

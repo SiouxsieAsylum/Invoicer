@@ -9,4 +9,4 @@ Email.getAllTemplates = () => {
   return db.query(`SELECT * FROM templates`);
 }
 
-module.exports= Email
+module.exports = Email;

@@ -6,7 +6,7 @@ User.findById = id => {
 }
 
 User.findByEmail = email => {
-  return db.one(`SELECT * FROM users WHERE email=$2`,[email])
+  return db.one(`SELECT * FROM users WHERE email=$1`,[email])
 }
 
 User.create = user => {
