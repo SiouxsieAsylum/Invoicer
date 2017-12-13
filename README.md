@@ -44,13 +44,13 @@
 
 ### Templates
 
-| Column | template | id | 
-|---|---|---|
-| Type | TEXT | SERIAL |
-| Primary Key | false | true | 
-| References | N/A | N/A |
-| Not Null | true | true | 
-| Default | N/A | N/A |
+| Column | template | id | name | 
+|---|---|---|---|
+| Type | TEXT | SERIAL | VARCHAR |
+| Primary Key | false | true | false |
+| References | N/A | N/A | N/A |
+| Not Null | true | true | false |
+| Default | N/A | N/A | N/A |
 
 
 ### Optional: Saved Emails
