@@ -16,4 +16,16 @@ passport.use(new yahooStrategy({
   }
 ));
 
+// {
+//     "error": {
+//         "name": "InternalOAuthError",
+//         "message": "failed to obtain request token",
+//         "oauthError": {
+//             "statusCode": 401,
+//             "data": "oauth_problem=consumer_key_rejected"
+//         }
+//     },
+//     "message": "failed to obtain request token"
+// }
+
 module.exports = passport;
