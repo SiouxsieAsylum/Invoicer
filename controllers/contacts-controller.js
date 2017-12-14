@@ -1,5 +1,3 @@
-// to do when I get home
-// make a namespaces.md file with all the prechosen naming in the template and in the auth inputs
 const Contact = require('../models/Contact');
 const contactsControllers = {}
 
