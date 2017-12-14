@@ -6,7 +6,7 @@ passport.use(new yahooStrategy({
     consumerKey: process.env.YAHOO_CONSUMER_ID,
     consumerSecret: process.env.YAHOO_CONSUMER_SECRET,
       //what exactly is this url supposed to be? Is the user ever supposed to interact with this?
-    callbackURL: "http://localhost:3001/auth/yahoo/callback"
+    callbackURL: "http://localhost:3001/api/auth/yahoo/callback"
   },
   function(token, tokenSecret, profile, done) {
      // is this just find the user email in my database, and if it doesn't exist, insert it as a user? Is that what this does?

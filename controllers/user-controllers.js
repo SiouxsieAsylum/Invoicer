@@ -8,11 +8,11 @@ usersController.create = (req, res, next) => {
   // debugger;
 
   const salt = bcrypt.genSaltSync();
-  const hash = bcrypt.hashSync(req.body.password, salt);
+  const hash = bcrypt.hashSync(req.body.password_digest, salt);
   User.create({
     name: req.body.name,
     email: req.body.email,
-    password: hash,
+    password_digest: hash,
     company: req.body.company,
     icon: req.body.icon,
     signature: req.body.signature
@@ -25,7 +25,7 @@ usersController.create = (req, res, next) => {
         data: { user }
       })
     });
-  }).catch(next);
+  }).catch(console.log(req.body));
 }
 
 usersController.show = (req,res,next) => {
