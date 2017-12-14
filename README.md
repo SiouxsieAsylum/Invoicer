@@ -31,13 +31,13 @@
 | Default | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 
 ### Contacts
-| Column | name | email | company | owed | service |date_of_service| id | contractor-id |
-|---|---|---|---|---|---|---|---|---|
-| type | VARCHAR | VARCHAR | VARCHAR | FLOAT | VARCHAR | VARCHAR | SERIAL | INTEGER
-| Primary key | false | false | false | false | false | false | true | false |
-| References | N/A | N/A | N/A | N/A | N/A | N/A | N/A | user(id) |
-| Not Null | true | true | false | true | true | true | true | true |
-| Default | N/A | N/A | N/A | 0 | N/A | N/A | N/A | user(id) |
+| Column | name | email | owed | service |date_of_service| id | contractor |
+|---|---|---|---|---|---|---|---|
+| type | VARCHAR | VARCHAR | FLOAT | VARCHAR | VARCHAR | SERIAL | INTEGER
+| Primary key | false | false | false | false | false | true | false |
+| References | N/A | N/A | N/A | N/A | N/A | N/A | user(id) |
+| Not Null | true | true | true | true | true | true | true |
+| Default | N/A | N/A | 0 | N/A | N/A | N/A | user(id) |
 
 <!-- invoice attachment file link? -->
 **Note** - I may end up adding an invoice column depending on whether or not I can get the attachments to work. 

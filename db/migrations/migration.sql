@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS contacts (
   email VARCHAR NOT NULL,
   owed INTEGER DEFAULT 0,
   service VARCHAR NOT NULL,
+  date_of_service VARCHAR NOT NULL,
   contractor INTEGER REFERENCES users(id)
 );
 

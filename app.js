@@ -10,16 +10,11 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 
+const contactRouter = require('./routes/contact-routes')
 const emailRouter = require('./routes/email-routes')
 const userRouter = require('./routes/user-routes')
 const authRouter = require('./routes/auth-routes')
 
-/*
-Where am I now? Copied and pasted server.js, copied and pasted all the auth services, made the file structure. Email routes are writted and controllers are laid out for MVP. No models yet.
-
-Decide how you want the template information to display.
-Decide on a database name and do the config. Finish all user auth stuff tomorrow
-*/
 const app = express();
 
 const PORT = process.env.PORT || 3001;
@@ -41,6 +36,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/api/emails', emailRouter)
+app.use('/api/contacts', contactRouter)
 app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
 

@@ -1,8 +1,8 @@
-INSERT INTO contacts (name,email,owed,service,contractor) VALUES('Buzz Lightyear','infinityandbeyond@yahoo.com',1000,'website construction',1),
-  ('Woody','youareatoy@howdy.com',200,'app maintainance',1),
-  ('Bo Peep','countingsheep@yahoo.com',500,'app maintainance',1),
-  ('Rex','madebymattelbutnotreally@gmail.com',1000,'website maintainance',2),
-  ('Slinky','wheresmyotherhalf@gmail.com',1000,'website construction',2);
+INSERT INTO contacts (name,email,owed,service,date_of_service,contractor) VALUES('Buzz Lightyear','infinityandbeyond@yahoo.com',1000,'website construction','7/29/2017',1),
+  ('Woody','youareatoy@howdy.com',200,'app maintainance','7/01/2017',1),
+  ('Bo Peep','countingsheep@yahoo.com',500,'app maintainance','1/04/2017',1),
+  ('Rex','madebymattelbutnotreally@gmail.com',1000,'website maintainance','11/08/2017',2),
+  ('Slinky','wheresmyotherhalf@gmail.com',1000,'website construction','8/16/2017',2);
 
 INSERT INTO templates (name,template) VALUES
 ('first request','Hello {this.props.contact.name},

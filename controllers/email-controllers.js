@@ -2,6 +2,7 @@ const Email = require('../models/Email');
 const nodemailer = require('nodemailer')
 const emailControllers = {};
 
+// there as to be a password
 const transporter = nodemailer.createTransport({
     // this is the host that sends the mail
     host: 'smtp.mail.yahoo.com',
@@ -35,7 +36,7 @@ emailControllers.getAllTemplates = (req,res,next) =>{
 }
 emailControllers.sendEmails = (req,res,next) =>{
   let mailOptions = {
-        from: req.body.email,
+        from: req.user.email,
         to: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line
         text: req.body.text, // plain text body
