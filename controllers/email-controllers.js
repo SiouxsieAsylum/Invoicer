@@ -8,6 +8,7 @@ const transporter = nodemailer.createTransport({
     host: 'smtp.mail.yahoo.com',
     // this is the port it operates on
     port: 587,
+    secure: true,
     auth: {
         user: 'datetimetest001@yahoo.com',
         pass: 'farrah12'
