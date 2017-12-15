@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS users (
   name VARCHAR,
   company VARCHAR,
   icon VARCHAR,
-  signature VARCHAR
+  signature VARCHAR,
   accessToken TEXT,
   refreshToken TEXT
 );

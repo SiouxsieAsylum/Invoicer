@@ -10,7 +10,7 @@ User.findByEmail = email => {
 }
 
 User.create = user => {
-  return db.one(`INSERT INTO users (email,password_digest,name,company,icon,signature) VALUES ($1,$2,$3,$4,$5,$6) RETURNING *`,[user.email,user.password_digest,user.name,user.company,user.icon,user.signature])
+  return db.one(`INSERT INTO users (email,name,company,icon,signature) VALUES ($1,$2,$3,$4,$5) RETURNING *`,[user.email,user.password_digest,user.name,user.company,user.icon,user.signature])
 }
 
 User.update = (user,id) => {
