@@ -2,7 +2,7 @@ const express = require('express');
 const authRouter = express.Router();
 const passport = require('../services/auth/local');
 const passportG = require('../services/auth/google');
-const passportY = require('../services/auth/yahoo');
+// const passportY = require('../services/auth/yahoo');
 const authHelpers = require('../services/auth/auth-helpers');
 const usersController = require('../controllers/user-controllers');
 
