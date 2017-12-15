@@ -5,8 +5,8 @@ CREATE TABLE IF NOT EXISTS users (
   company VARCHAR,
   icon VARCHAR,
   signature VARCHAR,
-  accessToken TEXT,
-  refreshToken TEXT
+  accessToken TEXT
+  -- refreshToken TEXT
 );
 
 CREATE TABLE IF NOT EXISTS contacts (

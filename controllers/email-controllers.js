@@ -37,8 +37,8 @@ emailControllers.sendEmails = (req,res,next) =>{
         user: req.user,
         clientId: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        refreshToken: 'how do I get this',
-        accessToken: 'how do I get this',
+        refreshToken: req.user.refreshToken,
+        accessToken: req.user.accessToken,
         expires: 9999999999999
     }
   });

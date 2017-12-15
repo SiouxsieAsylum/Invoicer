@@ -29,6 +29,7 @@ usersController.create = (req, res, next) => {
 }
 
 usersController.show = (req,res,next) => {
+  console.log(req.user)
   User.findById(req.user.id)
   .then(user => {
     res.json({

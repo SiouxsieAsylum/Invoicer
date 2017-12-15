@@ -10,8 +10,8 @@ module.exports = () => {
 
 passport.deserializeUser((email, done) => {
       User.findByEmail(email)
-      // console.log(email)
       .then(user => {
+        console.log(user)
       done(null, user);
       }).catch (err => {
         done(err, null);

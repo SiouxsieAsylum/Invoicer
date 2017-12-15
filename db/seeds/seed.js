@@ -10,12 +10,12 @@ const User = require('../../models/User')
 // const secondPassword = bcrypt.hashSync(secondOriginalPassword, salt);
 
 const firstUser = {email: "mckenzie.andrea.m@gmail.com",
-                   // password_digest: firstPassword,
+
                    name: "Andrea McKenzie",
                    company: "MacDaddy Enterprises"}
 
 const secondUser = {email: "datetimetest001@yahoo.com",
-                    // password_digest: secondPassword,
+
                     name: "Testy McTest",
                     company: "TestCorp"}
 
