@@ -9,36 +9,33 @@ passport.use(new googleStrategy({
   callbackURL: "http://localhost:3001/api/auth/google/callback"
 },
   function(accessToken,refreshToken,profile,done){
-    debugger;
-    console.log(accessToken)
-    console.log(refreshToken)
-    console.log(profile)
-    // is this just find the user email in my database, and if it doesn't exist, insert it as a user? Is that what this does?
-    // User.findOrCreate({googleId: profile.id},function(err,user){
-    //   return done(err,user)
-    // })
     User.findByEmail(profile.email)
     .then(user => {
       if(!user){
         User.create({
-          name: profile.name,
+          name: profile.displayName,
           email: profile.email,
           icon: profile.icon,
           accessToken: accessToken,
           refreshToken: refreshToken
         })
+        .then(user => {
+          done(null,user)
+        })
       } else {
+        console.log(accessToken)
         if (refreshToken){
-          return User.updateRefreshToken(refreshToken)
+          return User.updateRefreshToken(refreshToken,profile.email)
         }
-        User.updateAccessToken(accessToken)
+        User.updateAccessToken(accessToken,profile.email)
         .then(accessed_user=>{
           done(null,user)
         })
+        .catch(err => console.log(err))
       }
     })
     .catch(profile => console.log(profile))
   }
 ))
-
+// thirdtimeisthedamncharm@gmail.com
 module.exports = passport;
