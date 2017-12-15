@@ -10,19 +10,24 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
+    "debugging": "^1.0.1",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "googleapis": "^23.0.0",
     "method-override": "^2.3.10",
     "morgan": "^1.9.0",
     "nodemailer": "^4.4.1",
     "nodemon": "^1.12.5",
     "passport": "^0.4.0",
+    "passport-google-oauth2": "^0.1.6",
     "passport-local": "^1.0.0",
+    "passport-yahoo-oauth2": "^0.2.6",
     "pg-promise": "^7.3.2"
   },
-  "scripts":{
-	"start":"node app.js",
-	"dev":"nodemon app.js"
-}
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "debugging":"DEBUG=*:* yarn dev"
+  }
 }

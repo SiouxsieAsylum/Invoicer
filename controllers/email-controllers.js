@@ -3,17 +3,7 @@ const nodemailer = require('nodemailer')
 const emailControllers = {};
 
 // there as to be a password
-const transporter = nodemailer.createTransport({
-    // this is the host that sends the mail
-    host: 'smtp.mail.yahoo.com',
-    // this is the port it operates on
-    port: 587,
-    secure: true,
-    auth: {
-        user: 'datetimetest001@yahoo.com',
-        pass: 'farrah12'
-    }
-});
+
 
 emailControllers.getTemplate = (req,res,next) =>{
   Email.getTemplate(req.params.id)
@@ -36,6 +26,23 @@ emailControllers.getAllTemplates = (req,res,next) =>{
   .catch(next)
 }
 emailControllers.sendEmails = (req,res,next) =>{
+  // this needs to be configured for auth
+  let  transporter = nodemailer.createTransport({
+    // this is the host that sends the mail
+    host: 'smtp.gmail.com',
+    port:465,
+    secure: true,
+    auth: {
+        type: 'OAuth2',
+        user: req.user,
+        clientId: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        refreshToken: req.user.refreshToken,
+        accessToken: req.user.accessToken,
+        expires: 9999999999999
+    }
+  });
+
   let mailOptions = {
         from: req.user.email,
         to: req.body.to, // list of receivers
