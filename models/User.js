@@ -17,6 +17,14 @@ User.update = (user,id) => {
  return db.one(`UPDATE users SET email=$1,name=$2,company=$3,icon=$4,signature=$5 WHERE id=$6`,[])
 }
 
+User.updateRefreshToken = (user,email) => {
+  return db.one(`UPDATE users SET refreshToken=$1 WHERE email=$2`,[user.refreshToken, email])
+}
+
+User.updateAccessToken = (user,email) => {
+  return db.one(`UPDATE users SET accessToken=$1 WHERE email=$2`,[user.accessToken, email])
+}
+
 module.exports = User;
 
 // when I get back, actually make the fucking database

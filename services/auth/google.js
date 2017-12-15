@@ -19,7 +19,23 @@ passport.use(new googleStrategy({
     // })
     User.findByEmail(profile.email)
     .then(user => {
-      done(null,user)
+      if(!user){
+        User.create({
+          name: profile.name,
+          email: profile.email,
+          icon: profile.icon,
+          accessToken: accessToken,
+          refreshToken: refreshToken
+        })
+      } else {
+        if (refreshToken){
+          return User.updateRefreshToken(refreshToken)
+        }
+        User.updateAccessToken(accessToken)
+        .then(accessed_user=>{
+          done(null,user)
+        })
+      }
     })
     .catch(profile => console.log(profile))
   }
