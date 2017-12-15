@@ -28,7 +28,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "debugging":"DEBUG=*:* yarn dev"
-    "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
+    "debugging":"DEBUG=*:* yarn dev",
+    "build":"cd client && yarn --production=false && yarn build"
   }
 }
