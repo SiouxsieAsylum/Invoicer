@@ -29,6 +29,6 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "debugging":"DEBUG=*:* yarn dev",
-    "build":"cd client && yarn --production=false && yarn build"
+    "heroku-build":"cd client && yarn --production=false && yarn build"
   }
 }
