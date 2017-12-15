@@ -12,7 +12,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "install": "cd client && yarn build && cd .."
+    "deploy": "cd client && yarn build && cd .."
   },
   "proxy":"http://localhost:3001"
 }
