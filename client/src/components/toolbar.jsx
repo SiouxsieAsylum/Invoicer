@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from
+// import { Link } from
 
 const NoUser = (props) => {
   return(

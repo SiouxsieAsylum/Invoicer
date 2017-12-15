@@ -10,26 +10,26 @@ class App extends Component {
       auth: false,
       user: {}
     }
-    // this.login = this.login.bind(this)
+    this.login = this.login.bind(this)
     this.logout = this.logout.bind(this)
   }
 
   // user auth fetchs
 
-  //  login(){
-  //   fetch('/api/auth/google',{
-  //     credentials:'include',
-  //     Accept:'application/json'
-  //   })
-  //   .then(res => res.json())
-  //   .then(json => {
-  //     this.setState({
-  //       auth: true,
-  //       user: json.data
-  //     })
-  //   })
-  //   .catch(err => err)
-  // }
+   login(){
+    fetch('/api/auth/google',{
+      credentials:'include',
+      Accept:'application/json'
+    })
+    .then(res => res.json())
+    .then(json => {
+      this.setState({
+        auth: true,
+        user: json.data
+      })
+    })
+    .catch(err => err)
+  }
 
    logout(){
     fetch('/api/auth/logout',{
@@ -52,7 +52,7 @@ class App extends Component {
         <Toolbar
           user={this.state.user}
           auth={this.state.auth}
-
+          login={this.login}
           logout={this.logout}
           />
         <Container
