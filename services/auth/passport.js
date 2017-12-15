@@ -3,6 +3,7 @@ const User = require('../../models/user');
 
 module.exports = () => {
   passport.serializeUser((user, done) => {
+  console.log("serialize=",user)
   done(null, user.email);
   });
 
@@ -11,7 +12,7 @@ module.exports = () => {
 passport.deserializeUser((email, done) => {
       User.findByEmail(email)
       .then(user => {
-        console.log(user)
+        console.log("deserialize=",user)
       done(null, user);
       }).catch (err => {
         done(err, null);
