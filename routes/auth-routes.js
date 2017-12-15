@@ -28,23 +28,23 @@ authRouter.get('/google/callback',
   }
 )
 // yahoo version
-authRouter.get('/yahoo',
-  passport.authenticate('yahoo'));
+// authRouter.get('/yahoo',
+//   passport.authenticate('yahoo'));
 
-authRouter.get('/yahoo/callback',
-  passport.authenticate('yahoo', { failureRedirect: '/login' }),
-  function(req, res) {
-    // Is this the right place to return the information? How would registering work with this if it's just looking for the email and password?
+// authRouter.get('/yahoo/callback',
+//   passport.authenticate('yahoo', { failureRedirect: '/login' }),
+//   function(req, res) {
+//     // Is this the right place to return the information? How would registering work with this if it's just looking for the email and password?
 
-    // and where do I save the tokens to be used by nodemailer?
-    return res.status(200).json({
-      message: 'logged in with yahoo',
-      auth: true,
-      data: {
-        user:req.user,
-      }
-    });
-  });
+//     // and where do I save the tokens to be used by nodemailer?
+//     return res.status(200).json({
+//       message: 'logged in with yahoo',
+//       auth: true,
+//       data: {
+//         user:req.user,
+//       }
+//     });
+//   });
 
 
 // local version
