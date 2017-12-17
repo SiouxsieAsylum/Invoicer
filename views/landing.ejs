@@ -2,23 +2,11 @@
 <html>
 <head>
   <title>Welcome to Invoice</title>
-  <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" type="text/css" href="/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <% include partials/meta.ejs %>
+
 </head>
 <body>
-  <div class="toolbar">
-    <% if (auth) {%>
-      <a href="api/emails"><li>Send Email</li></a>
-      <a href="api/user"><li>Profile</li></a>
-      <a href="api/auth/logout">Logout</a>
-
-    <% }else{ %>
-      <ul>
-        <a href="api/auth/google"><li>Login</li></a>
-      </ul>
-    <%}%>
-  </div>
+ <% include partials/toolbar.ejs %>
 
   <h1>A new way to get what you deserve.</h1>
   <div id="sign-in"><h2>Sign in with Google.</h2>

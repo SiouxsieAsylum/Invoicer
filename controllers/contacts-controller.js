@@ -4,9 +4,13 @@ const contactsControllers = {}
 contactsControllers.index = (req,res,next) =>{
   Contact.findAll(req.user.id)
   .then(contacts => {
-    res.json({
-      message: 'contact created',
-      data: { contacts }
+    // res.json({
+    //   message: 'contact created',
+    //   data: { contacts }
+    // })
+    res.render('contacts/index',{contacts,
+      auth: true,
+      user: req.user
     })
   })
   .catch(next)
@@ -14,9 +18,13 @@ contactsControllers.index = (req,res,next) =>{
 contactsControllers.show = (req,res,next) =>{
   Contact.findById(req.params.id)
   .then(contact => {
-    res.json({
-      message: 'contact created',
-      data: { contact }
+    // res.json({
+    //   message: 'contact created',
+    //   data: { contact }
+    // })
+    res.render('contacts/show',{contact,
+      auth: true,
+      user: req.user
     })
   })
   .catch(next)

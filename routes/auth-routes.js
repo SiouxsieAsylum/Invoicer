@@ -18,7 +18,8 @@ authRouter.get('/google', passport.authenticate('google', {
 authRouter.get('/google/callback',
   passportG.authenticate('google', {failureRedirect: '/login'}),
   function(req,res){
-      res.render("index",{auth:true, user:req.user})
+    res.redirect("/")
+    // res.render("index",{auth:true, user:req.user})
   }
 )
 

@@ -1,0 +1,11 @@
+  <div class="toolbar">
+    <% if (auth) {%>
+      <a href="api/emails"><li>Send Email</li></a>
+      <a href="api/user"><li>Profile</li></a>
+
+    <% }else{ %>
+      <ul>
+        <a href="api/auth/google"><li>Login</li></a>
+      </ul>
+    <%}%>
+  </div>

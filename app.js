@@ -40,9 +40,11 @@ app.use('/api/contacts', contactRouter)
 app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.get('/', (req, res) => {
   if (req.user) {
