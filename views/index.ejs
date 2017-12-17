@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Express version</title>
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" type="text/css" href="/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+ <!--  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Raleway" rel="stylesheet">
+  <script type="text/javascript" src="/js/main.js"></script> -->
+</head>
+<body>
+  <div class="toolbar">
+    <% if (auth) {%>
+      <a href="api/emails"><li>Send Email</li></a>
+      <a href="api/user"><li>Profile</li></a>
+
+    <% }else{ %>
+      <ul>
+        <a href="api/auth/google"><li>Login</li></a>
+      </ul>
+    <%}%>
+  </div>
+  <div class="flexbox">
+    <div class="index-flex" id="email">
+      <h1>Send Mail</h1>
+      <div class="index-image" id="envelope"></div>
+    </div>
+    <div class="index-flex" id="contact-list">
+      <h2>See Contacts</h2>
+      <div class="index-image" id="contact-cards"></div>
+    </div>
+  </div>
+
+</body>
+</html>

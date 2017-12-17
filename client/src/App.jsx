@@ -17,12 +17,13 @@ class App extends Component {
   // user auth fetchs
 
    login(){
-    fetch('/api/auth/google',{
+    fetch('/api/auth/login',{
       credentials:'include',
       Accept:'application/json'
     })
     .then(res => res.json())
     .then(json => {
+      console.log(json)
       this.setState({
         auth: true,
         user: json.data

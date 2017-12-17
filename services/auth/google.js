@@ -19,15 +19,11 @@ passport.use(new googleStrategy({
           email: profile.email,
           icon: profile.image,
           accessToken: accessToken1,
-          // refreshToken: refreshToken1
         })
         .then(user => {
           done(null,user)
         })
       } else {
-        // if (refreshToken1){
-        //   return User.updateRefreshToken(refreshToken1,profile.email)
-        // }
         User.updateAccessToken(accessToken1,profile.email)
         .then(accessed_user=>{
           done(null,user)
@@ -38,5 +34,4 @@ passport.use(new googleStrategy({
     .catch(profile => console.log(profile))
   }
 ))
-// thirdtimeisthedamncharm@gmail.com
 module.exports = passport;
