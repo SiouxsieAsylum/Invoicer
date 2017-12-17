@@ -1,9 +1,21 @@
+/*toolbar*/
+#toolbar{
+  width: 100vw;
+}
+
+#toolbar ul{
+  text-decoration: none;
+  list-style: none;
+}
+
+/*landing page*/
 #button{
   height:100px;
   width:100px;
   background-color:red;
 }
 
+/*index page*/
 .index-image{
   height:200px;
   width:200px;
@@ -17,7 +29,31 @@
 .index-flex{
   height:100vh;
   width:50vw;
-  flex-shrink: 0
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.index-content{
+  height:40vh;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width:50vw;
+}
+
+#index-left{
+  border-right:1px groove grey;
+}
+
+.index-content h2{
+  text-align: center;
+}
+
+.index-content a{
+  align-self: center;
 }
 
 #email{
