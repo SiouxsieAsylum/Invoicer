@@ -39,9 +39,13 @@ contactsControllers.create = (req,res,next) =>{
     contractor: req.user.id
   })
   .then(contact => {
-    res.json({
-      message: 'contact created',
-      data: { contact }
+    // res.json({
+    //   message: 'contact created',
+    //   data: { contact }
+    // })
+    res.render('contacts/show',{contacts,
+      auth: true,
+      user: req.user
     })
   })
   .catch(next)
@@ -56,9 +60,13 @@ contactsControllers.update = (req,res,next) =>{
     contractor: req.user.id
   }, req.user.id)
   .then(contact => {
-    res.json({
-      message: 'contact created',
-      data: { contact }
+    // res.json({
+    //   message: 'contact created',
+    //   data: { contact }
+    // })
+    res.render('contacts/show',{contact,
+      auth: true,
+      user: req.user
     })
   })
   .catch(next)
@@ -66,9 +74,7 @@ contactsControllers.update = (req,res,next) =>{
 contactsControllers.delete = (req,res,next) =>{
   Contact.destroy(req.params.id)
   .then(() => {
-    res.json({
-      message: 'contact created',
-    })
+    res.redirect('/api/contacts')
   })
   .catch(next)
 }

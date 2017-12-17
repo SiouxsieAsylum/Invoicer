@@ -4,7 +4,9 @@
  - LinkedIn: [Andrea McKenzie](https://www.linkedin.com/in/andrea-mckenzie/)
  - Skype: andrea.michelle.mckenzie
 
- Invoicer is a React/Express application that sends template emails to your saved clients. 
+ 
+
+ Invoicer is an Express application that sends template emails to your saved clients. 
  - **MVP** Sends a single email to a single client at a time
  - **MVP + 1** Uploads attachments and sends single email with an attachment to single client
  - **MVP + 2** Sends multiple emails to multiple clients

@@ -19,11 +19,12 @@ usersController.create = (req, res, next) => {
   }).then(user => {
     req.login(user, (err) => {
       if (err) return next(err);
-      res.json({
-        message: 'user sucessfully created',
-        auth: true,
-        data: { user }
-      })
+      // res.json({
+      //   message: 'user sucessfully created',
+      //   auth: true,
+      //   data: { user }
+      // })
+      res.redirect('/')
     });
   }).catch(console.log(req.body));
 }
@@ -33,10 +34,14 @@ usersController.show = (req,res,next) => {
   User.findById(req.user.id)
   .then(user => {
     // change to res.render
-    res.json({
-      message: `${user.name} found`,
-      data: { user },
-      auth: true
+    // res.json({
+    //   message: `${user.name} found`,
+    //   data: { user },
+    //   auth: true
+    // })
+    res.render('users/show',{
+      auth: true,
+      user: user
     })
   })
   .catch(next)
@@ -51,9 +56,13 @@ usersController.update = (req,res,next) => {
     icon: req.body.icon,
     signature: req.body.signature
   },req.user.id).then(user => {
-    res.json({
-      message: `${user.name} updated!`,
-      data: { user }
+    // res.json({
+    //   message: `${user.name} updated!`,
+    //   data: { user }
+    // })
+    res.render('users/show',{contacts,
+      auth: true,
+      user: req.user
     })
   })
   .catch(next)

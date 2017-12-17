@@ -8,9 +8,13 @@ const emailControllers = {};
 emailControllers.getTemplate = (req,res,next) =>{
   Email.getTemplate(req.params.id)
   .then(template => {
-    res.json({
-      message: 'template found',
-      data: { template }
+    // res.json({
+    //   message: 'template found',
+    //   data: { template }
+    // })
+    res.render('emails/index',{template,
+      auth: true,
+      user: req.user
     })
   })
   .catch(next)
@@ -18,9 +22,13 @@ emailControllers.getTemplate = (req,res,next) =>{
 emailControllers.getAllTemplates = (req,res,next) =>{
   Email.getAllTemplates()
   .then(templates => {
-    res.json({
-      message: 'all templates found',
-      data: { templates }
+    // res.json({
+    //   message: 'all templates found',
+    //   data: { templates }
+    // })
+    res.render('emails/templates',{templates,
+      auth: true,
+      user: req.user
     })
   })
   .catch(next)
@@ -57,7 +65,10 @@ emailControllers.sendEmails = (req,res,next) =>{
             res.send(error)
         }
         console.log('Message sent: %s', response.messageId);
-        res.send('sent')
+      res.render('emails/sent',{
+        auth: true,
+        user: req.user
+      })
 
     });
 

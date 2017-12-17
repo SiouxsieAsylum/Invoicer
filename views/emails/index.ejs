@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <%include ../partials/meta.ejs%>
+</head>
+<body>
+  <%include ../partials/toolbar.ejs%>
+  <ul>
+  <%for (let template of templates {%>
+    <li><% template %></li>
+  <%}%>
+  </ul>
+</body>
+</html>
