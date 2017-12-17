@@ -2,18 +2,17 @@ const Contact = require('../models/Contact');
 const contactsControllers = {}
 
 contactsControllers.index = (req,res,next) =>{
+  console.log("contacts")
   Contact.findAll(req.user.id)
   .then(contacts => {
-    // res.json({
-    //   message: 'contact created',
-    //   data: { contacts }
-    // })
-    res.render('contacts/index',{contacts,
+    console.log(contacts)
+    res.render('contacts/index', {
+      contacts: contacts,
       auth: true,
       user: req.user
     })
   })
-  .catch(next)
+  .catch(err => console.log(err))
 }
 contactsControllers.show = (req,res,next) =>{
   Contact.findById(req.params.id)
@@ -22,7 +21,7 @@ contactsControllers.show = (req,res,next) =>{
     //   message: 'contact created',
     //   data: { contact }
     // })
-    res.render('contacts/show',{contact,
+    res.render('contacts/show',{contact: contact,
       auth: true,
       user: req.user
     })
@@ -43,7 +42,7 @@ contactsControllers.create = (req,res,next) =>{
     //   message: 'contact created',
     //   data: { contact }
     // })
-    res.render('contacts/show',{contacts,
+    res.render('contacts/show',{contact: contact,
       auth: true,
       user: req.user
     })
@@ -64,7 +63,7 @@ contactsControllers.update = (req,res,next) =>{
     //   message: 'contact created',
     //   data: { contact }
     // })
-    res.render('contacts/show',{contact,
+    res.render('contacts/show',{contact: contact,
       auth: true,
       user: req.user
     })

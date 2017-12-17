@@ -1,32 +1,30 @@
 const Email = require('../models/Email');
+const Contact = require('../models/Contact')
 const nodemailer = require('nodemailer')
 const emailControllers = {};
 
-// there as to be a password
-
-
 emailControllers.getTemplate = (req,res,next) =>{
   Email.getTemplate(req.params.id)
-  .then(template => {
-    // res.json({
-    //   message: 'template found',
-    //   data: { template }
-    // })
-    res.render('emails/index',{template,
-      auth: true,
-      user: req.user
+    .then(template =>{
+      Contact.findAll(req.user.id)
+        .then(contacts => {
+          res.render('emails/new',{
+            template:template,
+            contacts:contacts,
+            auth: true,
+            user: req.user
+          })
+        })
+        .catch(err => console.log(err))
     })
-  })
   .catch(next)
 }
 emailControllers.getAllTemplates = (req,res,next) =>{
+  console.log("templates")
   Email.getAllTemplates()
   .then(templates => {
-    // res.json({
-    //   message: 'all templates found',
-    //   data: { templates }
-    // })
-    res.render('emails/templates',{templates,
+    res.render('emails/index',{
+      templates:templates,
       auth: true,
       user: req.user
     })
@@ -34,9 +32,7 @@ emailControllers.getAllTemplates = (req,res,next) =>{
   .catch(next)
 }
 emailControllers.sendEmails = (req,res,next) =>{
-  // this needs to be configured for auth
   let  transporter = nodemailer.createTransport({
-    // this is the host that sends the mail
     host: 'smtp.gmail.com',
     port:465,
     secure: true,
@@ -45,9 +41,7 @@ emailControllers.sendEmails = (req,res,next) =>{
         user: req.user,
         clientId: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        refreshToken: req.user.refreshToken,
-        accessToken: req.user.accessToken,
-        expires: 9999999999999
+        accessToken: req.user.accessToken
     }
   });
 

@@ -7,7 +7,7 @@ contactRouter.get("/", contactControllers.index)
 contactRouter.post("/", contactControllers.create)
 
 contactRouter.get("/new", function(req,res){
-  res.render("contacts/new", { auth: true, user: req.user })
+  res.render("contacts/new", { auth: true, user: req.user, contact: false })
 })
 
 contactRouter.get("/:id", contactControllers.show)

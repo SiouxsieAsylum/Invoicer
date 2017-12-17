@@ -6,8 +6,8 @@ const emailRouter = express.Router()
 // how to ensure the proper string interpolation of the required data?
 // in the proper places: {this.props.recipient.name} or whatever?
 
-emailRouter.get("/",emailControllers.getAllTemplates)
-emailRouter.get("/:id",emailControllers.getTemplate)
+emailRouter.get("/", emailControllers.getAllTemplates)
+emailRouter.get("/:id", emailControllers.getTemplate)
 emailRouter.post("/send", emailControllers.sendEmails)
 
 module.exports = emailRouter;

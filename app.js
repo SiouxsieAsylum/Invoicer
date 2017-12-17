@@ -56,13 +56,11 @@ app.get('/', (req, res) => {
 });
 
 app.use('*', (req, res) => {
-  res.status(400).json({
-    message: 'Page Not Found',
-  });
+  res.status(400).render("error.ejs", {auth:true, user:req.user})
 });
 
 app.use((err, req, res, next) =>{
   console.log(err);
-  res.status(500).redirect("/")
+  res.status(500).render("error.ejs", {auth:true, user:req.user})
   });
 

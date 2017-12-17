@@ -2,7 +2,7 @@ const db = require('../db/config')
 const Contact = {};
 
 Contact.findAll = (userId) => {
-  return db.query(`SELECT * FROM contacts WHERE contractor = $1`,[userId])
+  return db.manyOrNone(`SELECT * FROM contacts WHERE contractor = $1`,[userId])
 }
 Contact.findById = (id) => {
   return db.one(`SELECT * FROM contacts WHERE id = $1`,[id])

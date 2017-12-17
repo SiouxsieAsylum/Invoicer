@@ -6,6 +6,25 @@
 </head>
 <body>
   <%include ../partials/toolbar.ejs%>
-<h1>Where the magic happens</h1>
+  <%let selected = {} %>
+  <div id="contacts-send">
+    <select id="contact-selection" onchange="addContact()">
+      <%for (let contact of contacts){%>
+        <option value="contact">contact.name</option>
+      <%} %>
+    </select>
+  <button type="submit" value="submit" form="email-form">&#10146;</button>
+
+  <% function addContact() {%>
+    <% const select = document.getElementById('contact-selection')%>
+    <%selected = select.value %>
+  <%}%>
+
+  </div>
+  <form method='POST' action='/api/emails/send' id="email-form">
+    <input name="to" placeholder="Recipient" value="<%selected.email %>" />
+    <input name="subject" placeholder="Subject" />
+    <textarea name="text" value="<%= template.template %>"></textarea>
+  </form>
 </body>
 </html>

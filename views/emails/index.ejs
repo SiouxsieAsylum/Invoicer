@@ -7,8 +7,10 @@
 <body>
   <%include ../partials/toolbar.ejs%>
   <ul>
-  <%for (let template of templates {%>
-    <li><% template %></li>
+  <%for (let template of templates) {%>
+    <li><a href="api/emails/<%= template.id%>">
+      <div class="template"><p><%= template %></p></div>
+    </a></li>
   <%}%>
   </ul>
 </body>
