@@ -6,11 +6,21 @@
 </head>
 <body>
   <%include ../partials/toolbar.ejs%>
-  <a href="/api/contacts/new">New Contact</a>
-  <ul>
+
+  <h1 id="clients">All <%= user.name %>'s Clients</h1>
+
+  <ul id="client-list">
+    <li><div class="client-card"><a href="/api/contacts/new">New Contact</a></div></li>
   <% for (let contact of contacts) {%>
-    <%console.log(contact.contactid)%>
-    <li><%= contact.name %> <%= contact.owed%> <a href="/api/contacts/<%= contact.contactid %>">See Contact</a></li>
+    <li>
+      <div class="client-card">
+        <h2 class="client-name"><i class="fa fa-address-card-o" aria-hidden="true"></i>  <%= contact.name %></h2>
+        <div class="card-bottom">
+          <h2 class="client-owes">Owed: <%= contact.owed%></h2>
+          <a href="/api/contacts/<%= contact.contactid %>">See Contact</a>
+        </div>
+      </div>
+     </li>
   <%}%>
 
   </ul>

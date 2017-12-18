@@ -6,9 +6,20 @@
 </head>
 <body>
   <%include ../partials/toolbar.ejs%>
+  <div class="contact-show-container">
 
-    <h1><%= contact.name %> <%= contact.owed%></h1>
-    <a href="/api/contacts/<%= contact.contactid %>/emails">Send Mail</a>
+    <div class="contact-show">
+      <h1><i class="fa fa-address-card-o" aria-hidden="true"></i><%= contact.name %></h1>
+      <div class="contact-flex">
+        <div class="contact-right"><h2>Current Balance: <%= contact.owed %></h2></div>
+        <div class="contact-left"><h2><%= contact.service %></h2>
+             <h2><%= contact.date_of_service %></h2>
+        </div>
+      </div>
+          <a href="/api/contacts/<%= contact.contactid %>/emails"><p>Send Mail</p></a>
+    </div>
+</div>
+
 
 </body>
 </html>

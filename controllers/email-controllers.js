@@ -3,15 +3,27 @@ const Contact = require('../models/Contact')
 const nodemailer = require('nodemailer')
 const emailControllers = {};
 
-  let  transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port:465,
-    secure: true,
-    auth:{ type: 'OAuth2',
-          clientId: process.env.GOOGLE_CLIENT_ID,
-          clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }
-  });
+  // let  transporter = nodemailer.createTransport({
+  //   host: 'smtp.gmail.com',
+  //   port:465,
+  //   secure: true,
+  //   auth:{ type: 'OAuth2',
+  //         clientId: process.env.GOOGLE_CLIENT_ID,
+  //         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  //   }
+  // });
+
+ const transporter = nodemailer.createTransport({
+     // this is the host that sends the mail
+     host: 'smtp.mail.yahoo.com',
+     // this is the port it operates on
+     port: 587,
+     // secure: true,
+     auth: {
+         user: 'datetimetest001@yahoo.com',
+         pass: 'farrah12'
+     }
+ });
 
 emailControllers.getTemplate = (req,res,next) =>{
   Promise.all([Email.getTemplate(req.params.templateId),
@@ -44,17 +56,18 @@ emailControllers.sendEmails = (req,res,next) =>{
 
 
   let mailOptions = {
-        from: req.user.email,
+        // from: req.user.email,
+        from:'datetimetest001@yahoo.com',
         to: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line
         text: req.body.text, // plain text body
         html: `<b>${req.body.text}</b>`, // html body
-        auth: {
-          username: req.user.email,
-          accessToken: req.user.accesstoken,
-          refreshToken: req.user.refreshtoken
-        // expires: 99999999999
-    }
+    //     auth: {
+    //       username: req.user.email,
+    //       accessToken: req.user.accesstoken,
+    //       refreshToken: req.user.refreshtoken
+    //     // expires: 99999999999
+    // }
   };
 
   transporter.sendMail(mailOptions, (error, response) => {
