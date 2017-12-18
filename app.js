@@ -35,7 +35,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/api/emails', emailRouter)
+// app.use('/api/emails', emailRouter)
 app.use('/api/contacts', contactRouter)
 app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)

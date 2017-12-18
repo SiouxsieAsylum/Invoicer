@@ -1,8 +1,8 @@
 const db = require('../db/config');
 const Email = {}
 
-Email.getTemplate = (id) => {
-  return db.one(`SELECT * FROM templates WHERE id = $1`,[id])
+Email.getTemplate = (templateId) => {
+  return db.one(`SELECT * FROM templates WHERE templateid = $1`,[templateId])
 }
 
 Email.getAllTemplates = () => {

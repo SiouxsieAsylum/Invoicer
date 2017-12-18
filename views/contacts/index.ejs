@@ -8,10 +8,11 @@
   <%include ../partials/toolbar.ejs%>
   <a href="/api/contacts/new">New Contact</a>
   <ul>
-  <%console.log(contacts)%>
   <% for (let contact of contacts) {%>
-    <li><%= contact.name %> <%= contact.owed%></li>
+    <%console.log(contact.contactid)%>
+    <li><%= contact.name %> <%= contact.owed%> <a href="/api/contacts/<%= contact.contactid %>">See Contact</a></li>
   <%}%>
+
   </ul>
 </body>
 </html>

@@ -15,12 +15,8 @@ contactsControllers.index = (req,res,next) =>{
   .catch(err => console.log(err))
 }
 contactsControllers.show = (req,res,next) =>{
-  Contact.findById(req.params.id)
+  Contact.findById(req.params.contactid)
   .then(contact => {
-    // res.json({
-    //   message: 'contact created',
-    //   data: { contact }
-    // })
     res.render('contacts/show',{contact: contact,
       auth: true,
       user: req.user
@@ -38,11 +34,8 @@ contactsControllers.create = (req,res,next) =>{
     contractor: req.user.id
   })
   .then(contact => {
-    // res.json({
-    //   message: 'contact created',
-    //   data: { contact }
-    // })
-    res.render('contacts/show',{contact: contact,
+    res.render('contacts/show',{
+      contact: contact,
       auth: true,
       user: req.user
     })
@@ -57,12 +50,8 @@ contactsControllers.update = (req,res,next) =>{
     service: req.body.service,
     date_of_service: req.body.date_of_service,
     contractor: req.user.id
-  }, req.user.id)
+  }, req.params.contactId)
   .then(contact => {
-    // res.json({
-    //   message: 'contact created',
-    //   data: { contact }
-    // })
     res.render('contacts/show',{contact: contact,
       auth: true,
       user: req.user
@@ -71,7 +60,7 @@ contactsControllers.update = (req,res,next) =>{
   .catch(next)
 }
 contactsControllers.delete = (req,res,next) =>{
-  Contact.destroy(req.params.id)
+  Contact.destroy(req.params.contactId)
   .then(() => {
     res.redirect('/api/contacts')
   })

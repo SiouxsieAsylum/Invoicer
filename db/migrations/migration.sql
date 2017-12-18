@@ -5,12 +5,12 @@ CREATE TABLE IF NOT EXISTS users (
   company VARCHAR,
   icon VARCHAR,
   signature VARCHAR,
-  accessToken TEXT
-  -- refreshToken TEXT
+  accessToken TEXT,
+  refreshToken TEXT
 );
 
 CREATE TABLE IF NOT EXISTS contacts (
-  id SERIAL PRIMARY KEY,
+  contactId SERIAL PRIMARY KEY,
   name VARCHAR NOT NULL,
   email VARCHAR NOT NULL,
   owed INTEGER DEFAULT 0,
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS contacts (
 );
 
 CREATE TABLE IF NOT EXISTS templates (
-  id SERIAL PRIMARY KEY,
+  templateId SERIAL PRIMARY KEY,
   name VARCHAR,
   template TEXT
 );

@@ -12,8 +12,9 @@ const usersController = require('../controllers/user-controllers');
 // google version
 authRouter.get('/google', passport.authenticate('google', {
   scope: ['https://www.googleapis.com/auth/plus.login',
-          'https://www.googleapis.com/auth/plus.profile.emails.read']
-}))
+          'https://www.googleapis.com/auth/plus.profile.emails.read'],
+          accessType: 'offline', prompt: 'consent' })
+)
 
 authRouter.get('/google/callback',
   passportG.authenticate('google', {failureRedirect: '/login'}),

@@ -4,34 +4,34 @@ const nodemailer = require('nodemailer')
 const emailControllers = {};
 
 emailControllers.getTemplate = (req,res,next) =>{
-  Email.getTemplate(req.params.id)
-    .then(template =>{
-      Contact.findAll(req.user.id)
-        .then(contacts => {
-          res.render('emails/new',{
-            template:template,
-            contacts:contacts,
-            auth: true,
-            user: req.user
-          })
-        })
-        .catch(err => console.log(err))
-    })
-  .catch(next)
-}
-emailControllers.getAllTemplates = (req,res,next) =>{
-  console.log("templates")
-  Email.getAllTemplates()
-  .then(templates => {
-    res.render('emails/index',{
-      templates:templates,
+  Promise.all([Email.getTemplate(req.params.templateId),
+              Contact.findById(req.params.contactid)])
+  .then(alldata => {
+    res.render('emails/new',{
+      template: alldata[0],
+      contact: alldata[1],
       auth: true,
       user: req.user
     })
   })
-  .catch(next)
+  .catch(err => console.log(err))
+}
+emailControllers.getAllTemplates = (req,res,next) =>{
+  Promise.all([Email.getAllTemplates(),
+              Contact.findById(req.params.contactid)])
+  .then(alldata => {
+    res.render('emails/index',{
+      templates: alldata[0],
+      contact: alldata[1],
+      auth: true,
+      user: req.user
+    })
+  })
+  .catch(err => console.log(err))
 }
 emailControllers.sendEmails = (req,res,next) =>{
+  console.log("params",req.params)
+  console.log("body",req.body)
   let  transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port:465,
@@ -41,7 +41,8 @@ emailControllers.sendEmails = (req,res,next) =>{
         user: req.user,
         clientId: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        accessToken: req.user.accessToken
+        accessToken: req.user.accessToken,
+        refreshToken: req.user.refreshToken
     }
   });
 

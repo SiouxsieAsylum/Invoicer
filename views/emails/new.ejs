@@ -6,25 +6,18 @@
 </head>
 <body>
   <%include ../partials/toolbar.ejs%>
-  <%let selected = {} %>
-  <div id="contacts-send">
-    <select id="contact-selection" onchange="addContact()">
-      <%for (let contact of contacts){%>
-        <option value="contact">contact.name</option>
-      <%} %>
-    </select>
-  <button type="submit" value="submit" form="email-form">&#10146;</button>
 
-  <% function addContact() {%>
-    <% const select = document.getElementById('contact-selection')%>
-    <%selected = select.value %>
-  <%}%>
-
+  <div>
+    <button type="submit" value="submit" form="email-form">&#10147;</button>
   </div>
-  <form method='POST' action='/api/emails/send' id="email-form">
-    <input name="to" placeholder="Recipient" value="<%selected.email %>" />
+  <form method='POST' action='/api/contacts/<%=contact.contactid %>/emails/send' id="email-form">
+    <input id="to" name="to" placeholder="Recipient" value="<%= contact.email%>"/>
     <input name="subject" placeholder="Subject" />
-    <textarea name="text" value="<%= template.template %>"></textarea>
+    <textarea name="text" value="<%= template.template %>"> <%= template.template %>
+
+      Amount owed: <%= contact.owed %> for <%= contact.service %> on <%= contact.date_of_service %>
+    </textarea>
   </form>
+
 </body>
 </html>

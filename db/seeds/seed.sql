@@ -5,5 +5,5 @@ INSERT INTO contacts (name,email,owed,service,date_of_service,contractor) VALUES
   ('Slinky','wheresmyotherhalf@gmail.com',1000,'website construction','8/16/2017',2);
 
 INSERT INTO templates (name,template) VALUES
-('first request','Hello <%= selected.name %>,
- I hope this email finds you well. This is a first requisition for payment on the <%= selected.service %> performed on <%= selected.date_of_service %>. The current balance owed is <%= selected.owed %>. Please reach out to me if you need me to resend my paypal link or if you have any questions. ');
+('first request','Hello,
+ I hope this email finds you well. This is a first requisition for payment. The current balance owed for the services rendered is listed below. Please reach out to me if you need me to resend my paypal link or if you have any questions. ');

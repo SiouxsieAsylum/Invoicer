@@ -7,7 +7,8 @@
 <body>
   <%include ../partials/toolbar.ejs%>
 
-    <h1><% contact.name %> <%contact.owed%></h1>
+    <h1><%= contact.name %> <%= contact.owed%></h1>
+    <a href="/api/contacts/<%= contact.contactid %>/emails">Send Mail</a>
 
 </body>
 </html>

@@ -19,11 +19,6 @@ usersController.create = (req, res, next) => {
   }).then(user => {
     req.login(user, (err) => {
       if (err) return next(err);
-      // res.json({
-      //   message: 'user sucessfully created',
-      //   auth: true,
-      //   data: { user }
-      // })
       res.redirect('/')
     });
   }).catch(console.log(req.body));
