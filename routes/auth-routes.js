@@ -13,7 +13,7 @@ const usersController = require('../controllers/user-controllers');
 authRouter.get('/google', passport.authenticate('google', {
   scope: ['https://www.googleapis.com/auth/plus.login',
           'https://www.googleapis.com/auth/plus.profile.emails.read'],
-          accessType: 'offline', prompt: 'consent' })
+          accessType: 'offline', prompt: 'consent'})
 )
 
 authRouter.get('/google/callback',

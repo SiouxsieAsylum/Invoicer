@@ -8,8 +8,10 @@ passport.use(new googleStrategy({
   callbackURL: "http://localhost:3001/api/auth/google/callback"
 },
   function(accessToken1,refreshToken1,profile,done){
+    console.log("**********************")
     console.log("access =" + accessToken1)
     console.log("refresh =" + refreshToken1)
+    console.log("**********************")
     User.findByEmail(profile.email)
     .then(user => {
       if(!user){

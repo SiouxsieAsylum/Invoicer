@@ -1,25 +1,92 @@
 /*toolbar*/
-#toolbar{
-  width: 100vw;
+body{
+  background-color:rgb(229, 229, 229);
 }
 
-#toolbar ul{
+.toolbar{
+  width: 100vw;
+  height:5vh;
+  padding-top: 1vh;
+  background-color: rgb(187, 190, 193);
+  text-align: right;
+  z-index: 1;
+  /*box-shadow: 0px 2px 5px rgb(64, 65, 66);*/
+  display: flex;
+  justify-content: flex-end;
+}
+
+a{
   text-decoration: none;
   list-style: none;
+  color: rgb(64, 65, 66);
+}
+
+a:hover{
+  color: rgb(0,0,0);
+}
+
+.toolbar p{
+  margin-right: 5vw;
+  font-size: 3vh;
 }
 
 /*landing page*/
 #button{
   height:100px;
-  width:100px;
-  background-color:red;
+  width:150px;
+  /*width:100px;*/
+  /*background-color:red;*/
+  background-image: url(../images/Gmail-Logo.png);
+  background-size:cover;
+  margin: 0 auto;
+}
+
+#landing-page{
+  position: relative;
+  height:95vh;
+  width: 100vw;
+  background-color:rgb(229, 229, 229);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#title-login{
+  font-weight: bold;
+  font-size: 3.5vh;
+}
+
+#landing-page h1{
+  position: absolute;
+  top:10vh;
+  left:5vw;
+  font-size: 6vh;
+  /*margin-bottom: 10vh;*/
+}
+
+#sign-in{
+  height:30vh;
+  width:50vw;
+  background-color: white;
+  align-self:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 0px 2px 5px rgb(64, 65, 66);
+}
+
+#sign-in h2{
+  font-size: 3vh;
+  /*margin-top: 5vh;*/
+  text-align: center;
 }
 
 /*index page*/
 .index-image{
-  height:200px;
-  width:200px;
-  background-color: red
+  height:190px;
+  width:190px;
+  background-position: 50% 50%;
+
 }
 
 .flexbox{
@@ -28,7 +95,7 @@
 
 .index-flex{
   height:100vh;
-  width:50vw;
+  width:100vw;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -36,30 +103,42 @@
 }
 
 .index-content{
-  height:40vh;
+  height:60vh;
   align-self: center;
   display: flex;
+  background-color: white;
   flex-direction: column;
-  justify-content: space-between;
-  width:50vw;
-}
-
-#index-left{
-  border-right:1px groove grey;
+  justify-content: space-around;
+  width:40vw;
+  border-bottom: 1px groove grey;
 }
 
 .index-content h2{
   text-align: center;
+  font-size: 5vh;
+}
+
+.welcome{
+  position: absolute;
+  margin-top: 7vh;
+  margin-left: 5vh;
+  font-size: 7vh;
 }
 
 .index-content a{
   align-self: center;
 }
 
-#email{
-
+#contact-cards{
+  margin-bottom: 10vh;
+  background-image: url(../images/contact-card.png);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  box-shadow: 0px 2px 5px rgb(64, 65, 66);
+  transition: 0.1s;
 }
 
-#contact-list{
-
+#contact-cards:hover{
+  background-color:rgb(229, 229, 229);
+  border-radius:2vh;
 }
