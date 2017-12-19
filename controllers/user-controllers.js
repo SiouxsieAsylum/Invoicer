@@ -28,12 +28,6 @@ usersController.show = (req,res,next) => {
   console.log(req.user)
   User.findById(req.user.id)
   .then(user => {
-    // change to res.render
-    // res.json({
-    //   message: `${user.name} found`,
-    //   data: { user },
-    //   auth: true
-    // })
     res.render('users/show',{
       auth: true,
       user: user

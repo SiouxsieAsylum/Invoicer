@@ -6,12 +6,26 @@
 </head>
 <body>
   <%include ../partials/toolbar.ejs%>
-  <ul>
+  <div class="container">
+  <h1 class="choose-template">Choose a template</h1>
+  <ul class="template-list">
+    <li>
+      <a>
+        <div class="template" id="add">+</div>
+      </a>
+    </li>
   <%for (let template of templates) {%>
     <li><a href="/api/contacts/<%= contact.contactid %>/emails/<%= template.templateid %>">
-      <div class="template"><p><%= template.template %></p></div>
+      <div class="template">
+
+        <div class="overlay">
+          <h2><%= template.name %></h2>
+        </div>
+        <p><%= template.template %></p>
+      </div>
     </a></li>
   <%}%>
   </ul>
+</div>
 </body>
 </html>

@@ -5,7 +5,7 @@ const userRouter = express.Router();
 
 // also need an edit route
 userRouter.get("/",userController.show)
-userRouter.get("/:id",userController.show)
+// userRouter.get("/:id",userController.show)
 userRouter.post("/",userController.create)
 userRouter.put("/",userController.update)
 

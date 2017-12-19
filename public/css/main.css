@@ -318,4 +318,171 @@ a:hover{
   background-color: rgb(175, 175, 175);
   color:rgb(117,117,120);
 }
+/* user profile */
 
+.user-icon{
+  height:30vh;
+  width:auto;
+}
+
+.profile-flex{
+  width: 60vw;
+  height: 40vh;
+  display: flex;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgb(64, 65, 66);
+  align-self: center;
+  justify-content: space-around;
+  padding-top: 5vh;
+}
+
+.profile-flex h1{
+  font-size: 6vh
+  font-weight: bold;
+  margin-top: 3vh;
+}
+
+.profile-flex h1{
+  font-size: 4vh
+}
+
+.user-info{
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-info p{
+  text-align: right;
+}
+
+/* templates */
+
+.choose-template{
+  position: absolute;
+  font-size: 6vh;
+  top:10vh;
+  left: 5vh;
+}
+
+.template{
+  position: relative;
+  height:20vw;
+  width:20vw;
+  padding:2vw;
+  overflow: hidden;
+  background-color: white;
+  color: black;
+  box-shadow: 0px 2px 5px rgb(64, 65, 66);
+  margin: 0 0vw 5vw 5vw;
+  flex-shrink: 0
+}
+
+.overlay{
+  position: absolute;
+  height:20vw;
+  width:20vw;
+  font-weight: bolder;
+  font-size: 4vh;
+  background-color: red;
+  background:linear-gradient( to top, rgba(255,255,255,1.0) 45%, rgba(255,255,255,0.0));
+}
+
+.overlay h2{
+  position: absolute;
+  bottom: 5vw;
+}
+
+.template-list{
+  /*background-color: green;*/
+  width: 100vw;
+  height:30vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* send email */
+#toolbar-send{
+  height: 5vh;
+  width:100vw;
+  background-color:rgb(207, 210, 214);
+  box-shadow: 0px 2px 5px rgb(64, 65, 66);
+  position: relative;
+  text-align: center;
+  font-size: 3.5vh;
+  padding-top: 0.5vh;
+}
+
+
+#email-submit{
+  position: absolute;
+  right:5vw;
+  top:.5vh;
+  height:2.5vw;
+  font-size: 5.5vh;
+  padding:0;
+  line-height: 0;
+  background-color: rgba(0,0,0,0);
+  /*background-color: red;*/
+  border:none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: 0.1s
+  outline:none;
+}
+
+#email-submit:hover{
+  background-color: rgb(99,99,99);
+  color: white;
+}
+
+#email-container{
+  height: 90vh;
+  width: 100vw;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+}
+
+#email-form{
+  align-self: center;
+  height:70vh;
+  width: 50vw;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgb(94, 95, 96);
+  display:flex;
+  flex-direction: column;
+}
+
+#button-span{
+  font-size: 2.5vw;
+  margin: 0;
+}
+
+#to,#subject,#text{
+  margin:0 5vw 0 5vw;
+  border:none;
+  font-size: 2vh;
+  outline: none;
+  transition: 0.5s;
+}
+
+#to:hover,#subject:hover,#text:hover{
+  font-size: 2.5vh;
+}
+
+#to:focus,#subject:focus,#text:focus{
+  background-color:rgb(225, 225, 225);
+}
+
+#to,#subject{
+  flex:1;
+  border-bottom: 2px dotted grey;
+}
+
+#text{
+  flex:5;
+  padding-top: 2vh;
+}

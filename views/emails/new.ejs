@@ -7,17 +7,21 @@
 <body>
   <%include ../partials/toolbar.ejs%>
 
-  <div>
-    <button type="submit" value="submit" form="email-form">&#10147;</button>
+  <div id="toolbar-send">
+    <p>Send Mail</p>
+    <button id="email-submit" type="submit" value="submit" form="email-form"> <span id="button-span"></span> &#10147;</button>
   </div>
+
+  <div id="email-container">
   <form method='POST' action='/api/contacts/<%=contact.contactid %>/emails/send' id="email-form">
     <input id="to" name="to" placeholder="Recipient" value="<%= contact.email%>"/>
-    <input name="subject" placeholder="Subject" />
-    <textarea name="text" value="<%= template.template %>"> <%= template.template %>
+    <input id="subject" name="subject" placeholder="Subject" />
+    <textarea id="text" name="text" value="<%= template.template %>"> <%= template.template %>
 
       Amount owed: <%= contact.owed %> for <%= contact.service %> on <%= contact.date_of_service %>
     </textarea>
   </form>
+  </div>
 
 </body>
 </html>

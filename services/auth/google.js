@@ -5,14 +5,10 @@ const User = require('../../models/User')
 passport.use(new googleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: 'https://template-mailer-oauth2.herokuapp.com/api/auth/google/callback'
-  // callbackURL:'http://localhost:5000/api/auth/google/callback'
+  // callbackURL: 'https://template-mailer-oauth2.herokuapp.com/api/auth/google/callback'
+  callbackURL:'http://localhost:3001/api/auth/google/callback'
 },
   function(accessToken1,refreshToken1,profile,done){
-    console.log("**********************")
-    console.log("access =" + accessToken1)
-    console.log("refresh =" + refreshToken1)
-    console.log("**********************")
     User.findByEmail(profile.email)
     .then(user => {
       if(!user){
