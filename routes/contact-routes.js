@@ -4,6 +4,7 @@ const emailRouter = require('./email-routes')
 const contactControllers = require('../controllers/contacts-controller')
 
 contactRouter.use("/:contactid/emails", emailRouter)
+contactRouter.get("/:contactid/edit-contact",contactControllers.edit)
 
 contactRouter.get("/", contactControllers.index)
 contactRouter.post("/", contactControllers.create)

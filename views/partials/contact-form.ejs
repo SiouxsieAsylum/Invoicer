@@ -1,7 +1,7 @@
-  <input class="input" type="text" name="name" placeholder="Name" value="<%contact ? contact.name : ""%>"/>
-  <input class="input" type="text" name="email" placeholder="Email" value="<%contact ? contact.email : ""%>"/>
-  <input class="input" type="number" name="owed" placeholder="Balance Owed" value="<%contact ? contact.owed : ""%>"/>
-  <input class="input" type="text" name="service" placeholder="Service Performed" value="<%contact ? contact.service : ""%>"/>
-  <input class="input" type="text" name="date_of_service" placeholder="MM/DD/YYYY" value="<%contact ? contact.date_of_service : ""%>"/>
+  <input class="input" type="text" name="name" placeholder="Name" value="<%= contact ? contact.name : ""%>"/>
+  <input class="input" type="text" name="email" placeholder="Email" value="<%= contact ? contact.email : ""%>"/>
+  <input class="input" type="number" name="owed" placeholder="Balance Owed" value="<%= contact ? contact.owed : ""%>"/>
+  <input class="input" type="text" name="service" placeholder="Service Performed" value="<%= contact ? contact.service : ""%>"/>
+  <input class="input" type="text" name="date_of_service" placeholder="MM/DD/YYYY" value="<%= contact ? contact.date_of_service : ""%>"/>
   <input class="input" type="hidden" name="contractor" value="<%= user.id %>" />
   <button class="submit-button" type="submit" value="submit">Submit Contact Information</button>

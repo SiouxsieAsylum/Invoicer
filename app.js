@@ -35,6 +35,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(methodOverride('_method'));
+
 // app.use('/api/emails', emailRouter)
 app.use('/api/contacts', contactRouter)
 app.use('/api/user', userRouter)
@@ -45,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(methodOverride('_method'));
+
 
 app.get('/', (req, res) => {
   if (req.user) {

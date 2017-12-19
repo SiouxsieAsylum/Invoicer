@@ -24,6 +24,20 @@ contactsControllers.show = (req,res,next) =>{
   })
   .catch(next)
 }
+
+contactsControllers.edit = (req,res,next) =>{
+  Contact.findById(req.params.contactid)
+  .then(contact => {
+    res.render('contacts/edit',{
+      contact: contact,
+      auth: true,
+      user: req.user
+    })
+  })
+  .catch(next)
+}
+
+
 contactsControllers.create = (req,res,next) =>{
   Contact.create({
     name: req.body.name,
@@ -50,7 +64,7 @@ contactsControllers.update = (req,res,next) =>{
     service: req.body.service,
     date_of_service: req.body.date_of_service,
     contractor: req.user.id
-  }, req.params.contactId)
+  }, req.params.contactid)
   .then(contact => {
     res.render('contacts/show',{contact: contact,
       auth: true,
@@ -60,7 +74,7 @@ contactsControllers.update = (req,res,next) =>{
   .catch(next)
 }
 contactsControllers.delete = (req,res,next) =>{
-  Contact.destroy(req.params.contactId)
+  Contact.destroy(req.params.contactid)
   .then(() => {
     res.redirect('/api/contacts')
   })

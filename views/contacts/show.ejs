@@ -16,7 +16,14 @@
              <h2><%= contact.date_of_service %></h2>
         </div>
       </div>
-          <p><a href="/api/contacts/<%= contact.contactid %>/emails"><i class="fa fa-envelope-square fa-3x" aria-hidden="true"></i></a></p>
+          <p>
+            <a href="/api/contacts/<%= contact.contactid %>/edit-contact">
+              <i class="fa fa-pencil-square fa-3x" aria-hidden="true"></i>
+            </a>
+            <a href="/api/contacts/<%= contact.contactid %>/emails">
+              <i class="fa fa-envelope-square fa-3x" aria-hidden="true"></i>
+            </a>
+          </p>
     </div>
 </div>
 
