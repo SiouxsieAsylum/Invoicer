@@ -156,6 +156,7 @@ a:hover{
 .client-card{
   height:20vw;
   width:25vw;
+  margin: 0 0vw 5vw 5vw;
   background-color: white;
   flex-shrink: 0;
   display: flex;
@@ -177,7 +178,9 @@ a:hover{
 
 #client-list{
   margin-top: 20vh;
-  height:80vh;
+  height:40vh;
+  overflow: hidden;
+  /*background-color: red;*/
   width:100vw;
   display: flex;
   justify-content: space-around;
@@ -224,9 +227,26 @@ a:hover{
 }
 
 .contact-flex{
-  width:inherit;
+  /*width:inherit;*/
+  height:20vh;
+  padding:5vh 0 5vh 0;
+  align-self: center;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  width:50vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.contact-show p {
+  width:inherit;
+  text-align: right;
+}
+
+.fa-envelope-square{
+  height:5vw;
+  width:5vw;
+  margin-right: 2vw;
 }
 
 /* send email */
