@@ -24,6 +24,7 @@ time, mark, audio, video {
   vertical-align: baseline;
   box-sizing: border-box;
   background-size:cover;
+  font-family: 'Jura', sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,

@@ -85,6 +85,7 @@ a:hover{
 
 #sign-in h2{
   font-size: 3vh;
+  color:rgb(99, 99, 99);
   /*margin-top: 5vh;*/
   text-align: center;
 }
