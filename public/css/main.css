@@ -15,6 +15,14 @@ body{
   justify-content: flex-end;
 }
 
+.container{
+  height: 95vh;
+  width: 100vw;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+}
+
 a{
   text-decoration: none;
   list-style: none;
@@ -194,14 +202,6 @@ a:hover{
 
 /* client show */
 
-.contact-show-container{
-  height:95vh;
-  width:100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .contact-show{
   height:60vh;
   width:60vw;
@@ -228,3 +228,72 @@ a:hover{
   display: flex;
   justify-content: space-around;
 }
+
+/* send email */
+
+.container{
+  height: 95vh;
+  width: 100vw;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+}
+
+.sent-message{
+  height:30vh;
+  width:60vw;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgb(64, 65, 66);
+}
+
+.sent-message h1{
+  font-size: 6vh;
+}
+
+/* contact form */
+
+.contact-form{
+  height: 70vh;
+  width: 50vw;
+  background-color: white;
+  padding:5vh;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  box-shadow: 0px 2px 5px rgb(64, 65, 66);
+}
+
+.input{
+  width: 20vw;
+  font-size: 2.5vh;
+  padding:1vh;
+  margin:1vh 0 1vh 0;
+  border:none;
+  outline:none;
+  border-bottom: 1px solid grey;
+  background-color: rgb(209, 209, 209);
+}
+
+.input:hover{
+  background-color: rgb(175, 175, 175);
+}
+
+.input:focus{
+  background-color:rgb(229, 229, 229);
+  border-bottom: 1px dotted grey;
+}
+
+.submit-button{
+  background-color: rgb(229, 229, 229);
+  border: .5vh solid rgb(48, 48, 48);
+  color:rgb(48, 48, 48);
+  width:20vw;
+  height:3vw;
+  font-size: 2vh;
+}
+
+.submit-button:hover{
+  background-color: rgb(175, 175, 175);
+  color:rgb(117,117,120);
+}
+

@@ -6,12 +6,12 @@
 </head>
 <body>
   <%include ../partials/toolbar.ejs%>
-  <ul>
-  <h1>New Contact</h1>
+  <div class="container">
+    <h1 class="new-contact">New Contact</h1>
 
-<form method="POST" action="/api/contacts">
-  <%include ../partials/contact-form%>
-</form>
-  </ul>
+    <form class="contact-form" method="POST" action="/api/contacts">
+      <%include ../partials/contact-form%>
+    </form>
+  </div>
 </body>
 </html>

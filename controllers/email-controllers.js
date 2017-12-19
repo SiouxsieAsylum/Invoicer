@@ -20,8 +20,10 @@ const emailControllers = {};
      port: 587,
      // secure: true,
      auth: {
-         user: 'datetimetest001@yahoo.com',
-         pass: 'farrah12'
+         // user:'datetimetest001@yahoo.com',
+         // pass:'farrah12'
+         user:'AndreaMichelleMcKenzieFSD@yahoo.com',
+         pass:'Makeup*diva1'
      }
  });
 
@@ -56,8 +58,9 @@ emailControllers.sendEmails = (req,res,next) =>{
 
 
   let mailOptions = {
-        // from: req.user.email,
-        from:'datetimetest001@yahoo.com',
+        from: req.user.email,
+        // from:'AndreaMichelleMcKenzieFSD@yahoo.com'
+        // from: 'Andrea McKenzie',
         to: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line
         text: req.body.text, // plain text body
