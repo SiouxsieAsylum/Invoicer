@@ -35,28 +35,32 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/api/emails', emailRouter)
+// app.use('/api/emails', emailRouter)
 app.use('/api/contacts', contactRouter)
 app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
 
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'public')));
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'))
+  if (req.user) {
+    res.render('index.ejs',{auth:true, user:req.user})
+  } else {
+    res.render('landing.ejs',{auth:false})
+  }
 });
 
 app.use('*', (req, res) => {
-  res.status(400).json({
-    message: 'Page Not Found',
-  });
+  res.status(400).render("error.ejs", {auth:true, user:req.user})
 });
 
 app.use((err, req, res, next) =>{
   console.log(err);
-  res.status(500).json({
-    error: err,
-    message: err.message,
+  res.status(500).render("error.ejs", {auth:true, user:req.user})
   });
-});
+

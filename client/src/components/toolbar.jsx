@@ -21,11 +21,11 @@ const User = (props) => {
 
 class Toolbar extends Component{
   constructor(props){
-    super()
+    super(props)
   }
 
   render(){
-    console.log(this.props.user.email)
+    // console.log(this.props.user.email)
     return(!this.props.user.email ?  <NoUser login={this.props.login}/> : <User user={this.props.user} logout={this.props.logout}/> )
   }
 }

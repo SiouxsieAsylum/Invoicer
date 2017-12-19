@@ -1,9 +1,9 @@
-INSERT INTO contacts (name,email,owed,service,date_of_service,contractor) VALUES('Buzz Lightyear','infinityandbeyond@yahoo.com',1000,'website construction','7/29/2017',1),
+INSERT INTO contacts (name,email,owed,service,date_of_service,contractor) VALUES('Buzz Lightyear','datetimetest001@yahoo.com',1000,'website construction','7/29/2017',1),
   ('Woody','youareatoy@howdy.com',200,'app maintainance','7/01/2017',1),
   ('Bo Peep','countingsheep@yahoo.com',500,'app maintainance','1/04/2017',1),
   ('Rex','madebymattelbutnotreally@gmail.com',1000,'website maintainance','11/08/2017',2),
   ('Slinky','wheresmyotherhalf@gmail.com',1000,'website construction','8/16/2017',2);
 
 INSERT INTO templates (name,template) VALUES
-('first request','Hello {this.props.contact.name},
- I hope this email finds you well. This is a first requisition for payment on the {this.props.contact.service} performed on {this.props.contact.date_of_service}. The current balance owed is {this.props.contact.owed}. Please reach out to me if you need me to resend my paypal link or if you have any questions. ');
+('first request','Hello,
+ I hope this email finds you well. This is a first requisition for payment. The current balance owed for the services rendered is listed below. Please reach out to me if you need me to resend my paypal link or if you have any questions. ');

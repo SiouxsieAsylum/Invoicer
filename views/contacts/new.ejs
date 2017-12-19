@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <%include ../partials/meta.ejs%>
+</head>
+<body>
+  <%include ../partials/toolbar.ejs%>
+  <div class="container">
+    <h1 class="new-contact">New Contact</h1>
+
+    <form class="contact-form" method="POST" action="/api/contacts">
+      <%include ../partials/contact-form%>
+    </form>
+  </div>
+</body>
+</html>
