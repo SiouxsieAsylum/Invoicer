@@ -17,7 +17,7 @@ authRouter.get('/google', passport.authenticate('google', {
     accessType: 'offline', prompt: 'consent'}))
 
 authRouter.get('/google/callback',
-  passportG.authenticate('google', {failureRedirect: '/login'}),
+  passport.authenticate('google', {failureRedirect: '/login'}),
   function(req,res){
     res.redirect("/")
     // res.render("index",{auth:true, user:req.user})
