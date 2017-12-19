@@ -13,8 +13,8 @@ const usersController = require('../controllers/user-controllers');
 authRouter.get('/google', passport.authenticate('google', {
   scope: ['https://www.googleapis.com/auth/plus.login',
           'https://www.googleapis.com/auth/plus.profile.emails.read',
-          'https://www.googleapis.com/auth/gmail.send']
-        }))
+          'https://www.googleapis.com/auth/gmail.send'],
+    }))
 
 authRouter.get('/google/callback',
   passportG.authenticate('google', {failureRedirect: '/login'}),
