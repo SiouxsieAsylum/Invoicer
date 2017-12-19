@@ -5,7 +5,7 @@ const User = require('../../models/User')
 passport.use(new googleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:3001/api/auth/google/callback"
+  callbackURL: 'https://template-mailer-oauth2.herokuapp.com/auth/google/callback'
 },
   function(accessToken1,refreshToken1,profile,done){
     console.log("**********************")
