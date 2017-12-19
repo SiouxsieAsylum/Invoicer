@@ -14,16 +14,36 @@ const emailControllers = {};
   // });
 
  const transporter = nodemailer.createTransport({
-     // this is the host that sends the mail
      host: 'smtp.mail.yahoo.com',
-     // this is the port it operates on
      port: 587,
-     // secure: true,
      auth: {
          user: process.env.EMAIL_ADDRESS,
          pass: process.env.PASSWD
      }
  });
+
+emailControllers.new = (req,res,next) => {
+  Contact.findById(req.params.contactid)
+  .then(contact => {
+    res.render('emails/new-template', {
+     auth: true,
+     contact: contact,
+     user: req.user
+   })
+  })
+  .catch(err => console.log(err))
+}
+
+emailControllers.create = (req,res,next) => {
+  Email.newTemplate({
+    name: req.body.name,
+    template: req.body.template
+  })
+  .then(template => {
+    res.redirect('back')
+  })
+  .catch(err => console.log(err))
+}
 
 emailControllers.getTemplate = (req,res,next) =>{
   Promise.all([Email.getTemplate(req.params.templateId),

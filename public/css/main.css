@@ -375,8 +375,17 @@ a:hover{
   background-color: white;
   color: black;
   box-shadow: 0px 2px 5px rgb(64, 65, 66);
-  margin: 0 0vw 5vw 5vw;
+  margin: 0 0vw 5vw 2.5vw;
   flex-shrink: 0
+}
+
+.template h1{
+  position:absolute;
+  font-weight: bolder;
+  font-size: 10vh;
+  top: 30%;
+  left:40%;
+  margin: 0 auto;
 }
 
 .overlay{
@@ -384,7 +393,8 @@ a:hover{
   height:20vw;
   width:20vw;
   font-weight: bolder;
-  font-size: 4vh;
+  font-size: 3vh;
+  text-align: center;
   background-color: red;
   background:linear-gradient( to top, rgba(255,255,255,1.0) 45%, rgba(255,255,255,0.0));
 }
@@ -397,10 +407,11 @@ a:hover{
 .template-list{
   /*background-color: green;*/
   width: 100vw;
-  height:30vh;
+  height:40vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  overflow: scroll;
 }
 
 /* send email */
@@ -485,4 +496,18 @@ a:hover{
 #text{
   flex:5;
   padding-top: 2vh;
+}
+
+/* new template */
+
+#template-body{
+  width:40vw;
+  height:40vh;
+}
+
+#new-template{
+  position: absolute;
+  top: 5vw;
+  left: 5vw;
+  font-size: 6vh;
 }

@@ -9,4 +9,8 @@ Email.getAllTemplates = () => {
   return db.query(`SELECT * FROM templates`);
 }
 
+Email.newTemplate = (template) => {
+  return db.one(`INSERT INTO templates (name,template) VALUES ($1,$2) RETURNING *`,[template.name, template.template])
+}
+
 module.exports = Email;

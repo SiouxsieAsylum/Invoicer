@@ -55,9 +55,9 @@
 | Default | N/A | N/A | N/A |
 
 
-### Optional: Saved Emails
-**Note** - this depends on `nodemailer`'s options for sent emails. 
-
-<!-- table somewhere of invoices to crud as well
- -->
-
+### Project Priorities Going Forward:
+- **Saved Emails**: Sending emails will also chain into a `POST` request to save the recipient, subject, and content like a sent-mail folder
+- **String Interpolation**: Client information will be inserted directly to template with pre-set string interpolation. (Should study content editable)
+- **Email formatting**: Markdown formatting available for emails. 
+- **OAuth2 with React**: Redirection to Google permissions from a React interface.
+- **User specific email credentials**: Send email from user's email address rather than with credentials saved as config variables.   

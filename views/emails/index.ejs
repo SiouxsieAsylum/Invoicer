@@ -10,8 +10,13 @@
   <h1 class="choose-template">Choose a template</h1>
   <ul class="template-list">
     <li>
-      <a>
-        <div class="template" id="add">+</div>
+      <a href="/api/contacts/<%=contact.contactid %>/emails/new-template">
+
+        <div class="template" id="add">
+          <div class="overlay"><h2>New Template</h2></div>
+            <h1>+</h1>
+
+        </div>
       </a>
     </li>
   <%for (let template of templates) {%>
