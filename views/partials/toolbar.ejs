@@ -1,10 +1,10 @@
   <div class="toolbar">
     <% if (auth) {%>
-      <a href="api/user"><p>Profile</p></a>
-      <a href="api/auth/logout"><p>Logout</p></a>
+      <a href="/api/user"><p>Profile</p></a>
+      <a href="/api/auth/logout"><p>Logout</p></a>
     <% }else{ %>
 
-        <a href="api/auth/google"><p>Login</p></a>
+        <a href="/api/auth/google"><p>Login</p></a>
 
     <%}%>
   </div>

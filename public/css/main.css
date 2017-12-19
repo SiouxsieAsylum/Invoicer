@@ -264,6 +264,7 @@ a:hover{
   width:60vw;
   background-color: white;
   box-shadow: 0px 2px 5px rgb(64, 65, 66);
+  align-self: center;
 }
 
 .sent-message h1{
