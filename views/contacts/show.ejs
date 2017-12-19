@@ -23,6 +23,11 @@
             <a href="/api/contacts/<%= contact.contactid %>/emails">
               <i class="fa fa-envelope-square fa-3x" aria-hidden="true"></i>
             </a>
+            <form class="inline" method="POST" action="/api/contacts/<%= contact.contactid %>?_method=DELETE">
+              <button class="delete">
+                <i class="fa fa-window-close fa-3x" aria-hidden="true"></i>
+              </button>
+            </form>
           </p>
     </div>
 </div>

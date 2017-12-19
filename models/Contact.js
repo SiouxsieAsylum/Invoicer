@@ -15,7 +15,7 @@ Contact.update = (contact,id) => {
   return db.one(`UPDATE contacts SET name=$1, email=$2, owed=$3, service=$4, date_of_service=$5 WHERE contactId = $6 RETURNING *`,[contact.name, contact.email, contact.owed, contact.service, contact.date_of_service, id])
 }
 Contact.destroy = (id) => {
-  return db.none(`DELETE FROM contacts WHERE id = $1`,[userId])
+  return db.none(`DELETE FROM contacts WHERE contactId = $1`,[id])
 }
 
 module.exports = Contact;

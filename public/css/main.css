@@ -228,7 +228,6 @@ a:hover{
 }
 
 .contact-flex{
-  /*width:inherit;*/
   height:20vh;
   padding:5vh 0 5vh 0;
   align-self: center;
@@ -248,6 +247,25 @@ a:hover{
   height:5vw;
   width:5vw;
   margin-right: 2vw;
+}
+
+.inline{
+  /*display: inline;*/
+  position: absolute;
+  width:inherit;
+  text-align: right;
+  /*margin: 2vw 2vw 0 0;*/
+  padding:2vw;
+}
+
+.delete{
+  transition: 0.3s
+
+}
+
+.delete:hover{
+  background-color: rgb(155, 0, 0);
+  color: white;
 }
 
 /* send email */
