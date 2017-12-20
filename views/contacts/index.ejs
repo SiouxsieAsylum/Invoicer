@@ -7,8 +7,9 @@
 <body>
   <%include ../partials/toolbar.ejs%>
 
-  <h1 id="clients">All <%= user.name %>'s Clients</h1>
 
+  <div class="container">
+    <h1 id="clients">All <%= user.name %>'s Clients</h1>
   <ul id="client-list">
     <li><div class="client-card"><a href="/api/contacts/new">New Contact</a></div></li>
   <% for (let contact of contacts) {%>
@@ -24,5 +25,6 @@
   <%}%>
 
   </ul>
+</div>
 </body>
 </html>

@@ -1,6 +1,8 @@
 /*toolbar*/
 body{
-  background-color:rgb(229, 229, 229);
+  background-image:url(../images/cathryn-lavery-67851.jpg);
+  background-size: 110%;
+  background-repeat: no-repeat;
 }
 
 .toolbar{
@@ -21,6 +23,11 @@ body{
   display:flex;
   flex-direction:column;
   justify-content: center;
+}
+
+.container, #email-container, .flexbox, #landing-page{
+  background-color:rgba(229, 229, 229,0.6);
+  background:radial-gradient(circle, rgba(229, 229, 229,0.3),rgba(229, 229, 229,1.0));
 }
 
 a{
@@ -53,7 +60,6 @@ a:hover{
   position: relative;
   height:95vh;
   width: 100vw;
-  background-color:rgb(229, 229, 229);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,7 +111,6 @@ a:hover{
 .index-flex{
   height:100vh;
   width:100vw;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -157,7 +162,7 @@ a:hover{
 .client-card{
   height:20vw;
   width:25vw;
-  margin: 0 0vw 5vw 5vw;
+  margin: 0 0vw 5vw 2.5vw;
   background-color: white;
   flex-shrink: 0;
   display: flex;
@@ -199,7 +204,7 @@ a:hover{
 }
 
 #clients{
-  margin-top: 8vh;
+  /*margin-top: 8vh;*/
   margin-left: 5vw;
   font-size: 7vh;
 }

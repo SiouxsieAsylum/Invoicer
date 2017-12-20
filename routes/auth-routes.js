@@ -41,13 +41,14 @@ authRouter.get('/google/callback',
 
 authRouter.get('/logout', (req, res) => {
   req.logout();
-  res.json({
-    message: 'logged out',
-    auth: false,
-    data: {
-      user: null,
-    }
-  })
+  res.redirect("/");
+  // res.json({
+  //   message: 'logged out',
+  //   auth: false,
+  //   data: {
+  //     user: null,
+  //   }
+  // })
 });
 
 module.exports = authRouter;
