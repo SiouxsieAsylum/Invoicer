@@ -42,7 +42,8 @@ app.use('/api/contacts', contactRouter)
 app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
 
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -50,11 +51,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.get('/', (req, res) => {
-  if (req.user) {
-    res.render('index.ejs',{auth:true, user:req.user})
-  } else {
-    res.render('landing.ejs',{auth:false})
-  }
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'))
 });
 
 app.use('*', (req, res) => {

@@ -9,6 +9,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
+    "browserify": "^15.0.0",
     "cookie-parser": "^1.4.3",
     "debugging": "^1.0.1",
     "dotenv": "^4.0.0",

@@ -9,6 +9,9 @@ const authHelpers = require('../services/auth/auth-helpers');
 const usersController = require('../controllers/user-controllers');
 
 
+// authRouter.use(bodyParser.json());
+// authRouter.use(bodyParser.urlencoded({ extended: false }));
+
 // google version
 authRouter.get('/google', passport.authenticate('google', {
   scope: ['https://www.googleapis.com/auth/plus.login',
@@ -25,18 +28,17 @@ authRouter.get('/google/callback',
 )
 
 
-// authRouter.get('/login', function(req,res,next){
+authRouter.get('/login', function(req,res,next){
 
-//     fetch('http://localhost:3001/api/auth/google')
-//     // .then(res => res.json()) // let's think about how OAuth takes us back to a page where we put our info and then redirects us somewhere else, this is the page we're recieving here
-//     .then(stuff => {
-//       // this is where we are gonna do things
-//       console.log('--> ',stuff.text);
-//       // res.json(stuff.url)
-//       //res.literallyWhatDoIDoHere
-//     })
-//     .catch(err => console.log(err));
-//   })
+    fetch('http://localhost:3001/api/auth/google')
+    // .then(res => res.json()) // let's think about how OAuth takes us back to a page where we put our info and then redirects us somewhere else, this is the page we're recieving here
+    .then(response => response.text())
+    .then(text => {
+      // console.log(JSON.stringify(blob))
+      res.send(text)
+    })
+    .catch(err => console.log(err));
+  })
 
 
 authRouter.get('/logout', (req, res) => {
